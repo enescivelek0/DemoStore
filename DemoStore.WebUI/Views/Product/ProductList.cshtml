@@ -1,0 +1,30 @@
+﻿@model List<DemoStore.WebUI.Product>
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<br />
+<h3>Meyve Ve Sebzeler</h3>
+<div class="container">
+    <br /><br />
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Ad</th>
+            <th>Fiyat</th>
+            <th>Resim</th>
+            <th>Stok</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductName</td>
+                <td>@item.ProductPrice</td>
+                <td>@item.ProductStock</td>
+                <td><img src="@item.ProductImageUrl"/></td>
+                <td>@item.ProductStatus</td>
+            </tr>
+        }
+    </table>
+</div>
